@@ -13,24 +13,30 @@ public class Cadastramento {
 		//despesa = new LinkedList<Despesas>();
 	}
 
-public boolean cadastrarAluno(Alunos a){
-	boolean resposta =alunos.add(a);
-	return resposta;
-}
-public boolean removerAluno(Alunos a){
-	boolean resposta = alunos.remove(a);
-	return resposta;
-}
-public Alunos pesquisarAluno(String nome){// a função pesquisar alunos será usada pela função remover alunos presente na principal e em cadastramento para pesquisar o objeto a ser removido 
-	Alunos resposta = null;
-	Iterator<Alunos> it = alunos.iterator();
-	while(it.hasNext()){
-		Alunos a = it.next();
-		if(a.getNome().equalsIgnoreCase(nome))
-			resposta = a;
+	public boolean cadastrarAluno(Alunos a){
+		boolean resposta =alunos.add(a);
+		return resposta;
 	}
-	return resposta;
-}
+	public boolean removerAluno(Alunos a){
+		boolean resposta = alunos.remove(a);
+		return resposta;
 	}
+	public Alunos pesquisarAluno(String nome){
+		
+		/* a função pesquisar alunos será usada pela função
+		 * remover alunos presente na principal e em cadastramento
+		 * para pesquisar o objeto a ser removido 
+		 */
+		
+		Alunos resposta = null;
+		Iterator<Alunos> it = alunos.iterator();
+		while(it.hasNext()){
+			Alunos a = it.next();
+			if(a.getNome().equalsIgnoreCase(nome))
+				resposta = a;
+		}
+		return resposta;
+	}
+}
 
 
