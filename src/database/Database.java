@@ -9,16 +9,13 @@ public class Database {
 	private String NOVA_LINHA = "\n";
 	private String FILE_NAME = "database.csv";
 	FileWriter writer;
+	FileReader reader;
 	
 	public void salvarAluno(Alunos aluno) {
 		
 		String nome = aluno.getNome();
 		String email = aluno.getEmail();
 		Float renda = aluno.getRenda();
-		
-		System.out.println(nome);
-		System.out.println(email);
-		System.out.println(renda);
 		
 		try {
 			
@@ -39,7 +36,5 @@ public class Database {
 		}
 		
 	}
-	
-	
 
 }
