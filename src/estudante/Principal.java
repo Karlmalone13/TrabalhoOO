@@ -3,14 +3,15 @@ package estudante;
 import javax.swing.JOptionPane;
 
 public class Principal {
-static Cadastramento c;
 	
-static final String[] opcoes = {
-	"-------selecione uma opção--------",
-	"Cadastar aluno",
-	"Remover aluno",
-	"Sair"
-};
+	static Cadastramento c;
+	
+	static final String[] opcoes = {
+		"-------selecione uma opção--------",
+		"Cadastar aluno",
+		"Remover aluno",
+		"Sair"
+	};
 	public static void main(String[] args) {
 		c = new Cadastramento();
 		 
@@ -64,21 +65,24 @@ static final String[] opcoes = {
 	}
    private static void removerAluno(){
 	   Alunos a = pesquisarAluno();
-		boolean remocao = false;
+	   boolean remocao = false;
 	   int opcao = JOptionPane.showConfirmDialog(null, 
 				"Deseja mesmo deletar o aluno?", 
 				"Deletar?", 
 				JOptionPane.YES_NO_OPTION, 
 				JOptionPane.QUESTION_MESSAGE);
+	   
 	   if(opcao == JOptionPane.YES_OPTION){
-	       remocao = c.removerAluno(a);
-	  
-		if(remocao)
-		   JOptionPane.showMessageDialog(null,"Aluno removido com sucesso!");
-	   	else
-	   		JOptionPane.showMessageDialog(null,"Não foi possível remover aluno");
-	   }else 
+		   
+		   remocao = c.removerAluno(a);
+		   if(remocao)
+			   JOptionPane.showMessageDialog(null,"Aluno removido com sucesso!");
+		   else
+			   JOptionPane.showMessageDialog(null,"Não foi possível remover aluno");
+	   }
+	   else { 
 		   JOptionPane.showMessageDialog(null,"Operação cancelada");
+	   }
    }
-	}
+}
 
